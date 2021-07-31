@@ -35,9 +35,13 @@ class QuestionPostRequest(BaseModel):
 @app.get("/")
 async def get_mairu_quote():
     """ return json of mairu quote """
-    single_result = quote_collection.find_one(
-        {"_id": ObjectId("6104dd41692707e716e2ddf6")})  # 🥚 I don't know what to find `mairu mairu mairu`
-    quote = Quote(**single_result)
+    quote = {
+        "quote": "ผมไม่รู้",
+        "quote_by": "คุณประวิทธ์",
+        "ref": None,
+        "media_url": None,
+        "media_type": None
+    }
     return quote
 
 
@@ -77,11 +81,14 @@ async def get_answer(question: QuestionPostRequest):
         cursor = quote_collection.aggregate([{"$sample": {"size": 1}}])
         for doc in cursor:
             quote = Quote(**doc)
-    else:
-        single_result = quote_collection.find_one(
-            {"_id": ObjectId("6104dd41692707e716e2ddf6")})
-        quote = Quote(**single_result)
-    return quote
+        return quote
+    return {
+        "quote": "ผมไม่รู้",
+        "quote_by": "คุณประวิทธ์",
+        "ref": None,
+        "media_url": None,
+        "media_type": None
+    }
 
 
 @app.get("/quotes")
