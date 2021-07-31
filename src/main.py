@@ -27,6 +27,11 @@ class Question(BaseModel):
     question: str
 
 
+class QuestionPostRequest(BaseModel):
+    question: str
+    jingjung: bool
+
+
 @app.get("/")
 async def get_mairu_quote():
     """ return json of mairu quote """
@@ -64,12 +69,18 @@ async def get_question_from_id(id):
 
 
 @app.post("/question")
-async def get_answer(question: Question):
+async def get_answer(question: QuestionPostRequest):
     """ return answer quote from question """
-    question_collection.insert_one(question.dict())
-    cursor = quote_collection.aggregate([{"$sample": {"size": 1}}])
-    for doc in cursor:
-        quote = Quote(**doc)
+    if question.question != "":
+        question_collection.insert_one(question.dict())
+    if question.jingjung:
+        cursor = quote_collection.aggregate([{"$sample": {"size": 1}}])
+        for doc in cursor:
+            quote = Quote(**doc)
+    else:
+        single_result = quote_collection.find_one(
+            {"_id": ObjectId("6104dd41692707e716e2ddf6")})
+        quote = Quote(**single_result)
     return quote
 
 
