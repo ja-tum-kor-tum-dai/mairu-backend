@@ -29,3 +29,11 @@ using docker compose
 docker compose down --remove-orphans
 docker network rm mairu | true
 ```
+
+## seed data
+
+```
+docker exec -it mairu-backend_api_1 /bin/sh
+cd seed-data
+python3 seed.py
+```
