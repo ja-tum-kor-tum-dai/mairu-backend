@@ -13,8 +13,13 @@ services:
     depends_on:
       - mongo
     command: >
-      uvicorn main:app --reload
+      uvicorn main:app --reload --host 0.0.0.0 --port 80
     volumes:
       - ./src/:/app
     ports:
-      - '11244:8000'
+      - '11244:80'
+
+networks:
+  default:
+    external:
+      name: mairu

@@ -1,3 +1,4 @@
 mongo-data
 __pycache__
+.vscode
 .DS_Store
