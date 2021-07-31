@@ -7,5 +7,3 @@ WORKDIR /app
 COPY . .
 
 RUN pip install -r requirements.txt
-
-CMD ["uvicorn", "src/main:app", "--port", "80"]
