@@ -1,23 +1,11 @@
-FROM centos:7
+FROM python:3.8-alpine
 
-WORKDIR /installing/
+RUN apk add build-base
 
-# Install Python 3.8.10
-RUN yum -y update
-RUN yum install gcc openssl-devel bzip2-devel libffi-devel wget make epel-release python3-pip python3-devel -y
-RUN yum -y groupinstall "Development Tools"
-RUN wget https://www.python.org/ftp/python/3.8.10/Python-3.8.10.tgz
-RUN tar xvf Python-3.8.10.tgz
-RUN ./Python-3.8.10/configure --enable-optimizations
-RUN make altinstall
-
-WORKDIR /app/
+WORKDIR /app
 
 COPY . .
 
-RUN pip3 install -r requirements.txt
+RUN pip install -r requirements.txt
 
-# Clean up
-RUN rm -rf /installing
-
-EXPOSE 11244
+CMD ["uvicorn", "main:app", "--reload"]
