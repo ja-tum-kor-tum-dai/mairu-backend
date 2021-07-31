@@ -6,3 +6,13 @@ services:
       - ./mongo-data:/data/db
     ports:
       - '27017:27017'
+  api:
+    build:
+      dockerfile: Dockerfile
+      context: .
+    depends_on:
+      - mongo
+    ports:
+      - '11244:8000'
+    volumes:
+      - .:/app
