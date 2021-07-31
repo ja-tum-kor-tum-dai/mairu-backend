@@ -37,7 +37,7 @@ async def get_mairu_quote():
     """ return json of mairu quote """
     quote = {
         "quote": "ผมไม่รู้",
-        "quote_by": "คุณประวิทธ์",
+        "quote_by": "พล.อ.ประวิตร​ วงษ์สุวรรณ",
         "ref": None,
         "media_url": None,
         "media_type": None
@@ -84,7 +84,7 @@ async def get_answer(question: QuestionPostRequest):
         return quote
     return {
         "quote": "ผมไม่รู้",
-        "quote_by": "คุณประวิทธ์",
+        "quote_by": "พล.อ.ประวิตร​ วงษ์สุวรรณ",
         "ref": None,
         "media_url": None,
         "media_type": None
