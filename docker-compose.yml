@@ -12,7 +12,9 @@ services:
       context: .
     depends_on:
       - mongo
+    command: >
+      uvicorn main:app --reload
+    volumes:
+      - ./src/:/app
     ports:
       - '11244:8000'
-    volumes:
-      - .:/app
