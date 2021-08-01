@@ -4,6 +4,7 @@ from pymongo import MongoClient
 from pydantic import BaseModel
 from bson import ObjectId
 from typing import Optional
+from random import choice
 
 app = FastAPI()
 
@@ -47,8 +48,10 @@ class QuestionPostRequest(BaseModel):
 @app.get("/")
 async def get_mairu_quote():
     """ return json of mairu quote """
+    mairus = ["ผมไม่รู้", "ไม่รู้ ๆๆๆ", "ก็บอกว่าไม่รู้ไง", "จะไปรู้ได้ไง"]
+    sample_mairu = choice(mairus)
     quote = {
-        "quote": "ผมไม่รู้",
+        "quote": sample_mairu,
         "quote_by": "พล.อ.ประวิตร​ วงษ์สุวรรณ",
         "ref": None,
         "media_url": None,
