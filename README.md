@@ -24,7 +24,7 @@ make down
 using docker compose
 
 ```
-docker network rm mairu | true
+docker compose down --remove-orphans
 ```
 
 ## seed data
