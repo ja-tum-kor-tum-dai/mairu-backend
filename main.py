@@ -5,7 +5,8 @@ from random import choice
 app = FastAPI()
 
 origins = [
-    'http://localhost:3000'
+    'http://localhost:3000',
+    'https://mairu.vercel.app/',
 ]
 
 app.add_middleware(
