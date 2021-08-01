@@ -1,5 +1,4 @@
 # mairu-backend
-
 ## run container
 
 using Makefile
@@ -11,7 +10,6 @@ make up
 using docker compose
 
 ```
-docker network create -d bridge mairu | true
 docker compose up -d
 ```
 
@@ -27,7 +25,6 @@ using docker compose
 
 ```
 docker compose down --remove-orphans
-docker network rm mairu | true
 ```
 
 ## seed data

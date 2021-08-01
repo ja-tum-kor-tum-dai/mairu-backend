@@ -5,7 +5,9 @@ services:
     volumes:
       - ./mongo-data:/data/db
     ports:
-      - '27017:27017'
+      - '27017'
+    networks:
+      - mairu
   api:
     build:
       dockerfile: Dockerfile
@@ -18,8 +20,8 @@ services:
       - ./src/:/app
     ports:
       - '11244:80'
+    networks:
+      - mairu
 
 networks:
-  default:
-    external:
-      name: mairu
+  mairu:
