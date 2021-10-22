@@ -1,5 +1,6 @@
 # mairu-backend
-## run container
+
+## Run Container
 
 using Makefile
 
@@ -13,7 +14,7 @@ using docker compose
 docker compose up -d
 ```
 
-## stop container
+## Stop Container
 
 using Makefile
 
@@ -21,16 +22,21 @@ using Makefile
 make down
 ```
 
-using docker compose
+Using Docker Compose
 
 ```
 docker compose down --remove-orphans
 ```
 
-## seed data
+## Seed Data
 
 ```
 docker exec -it mairu-backend_api_1 /bin/sh
 cd seed-data
 python3 seed.py
 ```
+
+## For The Contributors
+
+Thanks for having an interest in this project.
+Please read our guidelines in [CONTRIBUTING.md](https://github.com/ja-tum-kor-tum-dai/mairu-backend/blob/main/CONTRIBUTING.md) before starting a contribution.
