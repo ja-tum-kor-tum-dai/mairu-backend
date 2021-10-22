@@ -45,9 +45,3 @@ Explain your suggestion and include additional details to help us and the other 
 If you have a new sentence/words and related with the same meaning of the word "ไม่รู้" (meaning the same as "don't know").
 You can directly fork this project, add your new sentence/words to `mairu.txt`, and create a new pull request.
 Please make sure that your new sentence/words will not be duplicated.
-
-
-## Code Styleguides
-
-We use [Prettier](https://prettier.io/) as a code formatter.
-Please use it before creating the pull requests.
