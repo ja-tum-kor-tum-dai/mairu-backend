@@ -1,35 +1,84 @@
-# mairu-backend
+# Mairu Backend
 
-## Run Container
+Mairu (from Thai word "ไม่รู้")
 
-using Makefile
+This repository is the backend of the Mairu application, the application that can answer any questions with the answer is "ไม่รู้" (meaning as the same "don't know").
+We created it for fun and in short times during the [Stupid Hackathon Thailand #5](https://stupidhackth.github.io/5/) event.
 
+Mairu backend is built on [FastAPI](https://fastapi.tiangolo.com/) framework.
+
+## Running on Local Environment
+
+### Requirement
+
+You need to install this in your local environment.
+- [Python 3](https://www.python.org/downloads/)
+- [MongoDB](https://www.mongodb.com/)
+
+### Setup The Project
+
+#### Installing the dependency libraries
+
+Run this command
+```
+pip install -r requirements.txt
+```
+
+#### Setting your Database
+
+Open `src/main.py` and `src/seed.py`, change the line
+```py
+client = MongoClient("replace this to your MongoDB url here")
+```
+
+### Running The Project
+
+Run this command
+```
+uvicorn main:app --reload --host 0.0.0.0 --port 80
+```
+Now, you can ready to go.
+The backend application will run on `localhost:80`.
+
+## Running on Docker Container
+
+### Requirement
+You need [Docker](https://www.docker.com/) and [docker-compose](https://docs.docker.com/compose/) to run in container.
+
+
+
+## Run container
+
+Using Makefile
 ```
 make up
 ```
 
-using docker compose
-
+Using docker-compose
 ```
 docker compose up -d
 ```
 
 ## Stop Container
 
-using Makefile
-
+Using Makefile
 ```
 make down
 ```
 
-Using Docker Compose
-
+Using docker-compose
 ```
 docker compose down --remove-orphans
 ```
 
-## Seed Data
+## To Seed Initial Data
 
+For a local environment, simply run to your local
+```
+python3 seed.py
+```
+
+For a container, you need to execute /bin/sh to open the container shell and run `seed.py`
 ```
 docker exec -it mairu-backend_api_1 /bin/sh
 cd seed-data

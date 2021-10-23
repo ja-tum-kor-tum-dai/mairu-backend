@@ -1,7 +1,7 @@
 # Contributing to this project
 
 First of all,
-Thanks for your interest in this project. This project, we created for fun and in short times during the "Stupid Hackathon #5" event.
+Thanks for your interest in this project. This project, we created for fun and in short times during the [Stupid Hackathon Thailand #5](https://stupidhackth.github.io/5/) event.
 It has much room for improvement and it will have hidden bugs (and we don't like it at all 😞).
 
 But before you, the contributor to contribute this project with creativity and amazing idea or help us to fix hidden bugs.
