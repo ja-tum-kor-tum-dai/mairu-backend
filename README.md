@@ -7,9 +7,6 @@ We created it for fun and in short times during the [Stupid Hackathon Thailand #
 
 Mairu backend is built on [FastAPI](https://fastapi.tiangolo.com/) framework.
 
-**This repository have been fork from [https://github.com/ja-tum-kor-tum-dai/mairu-backend](https://github.com/ja-tum-kor-tum-dai/mairu-backend).**
-I fork it to create personal environment and git action, you can send PRs to this repository for Hacktoberfest.
-
 
 ## Running on Local Environment
 
